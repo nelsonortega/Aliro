@@ -11,6 +11,10 @@ namespace ExcelAddIn
 {
     public partial class ThisAddIn
     {
+        public void InternalStartup()
+        {
+
+        }
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
            

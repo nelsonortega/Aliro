@@ -12,5 +12,10 @@ namespace ExcelAddIn
         {
 
         }
+
+        private void btnDataBase_Click(object sender, RibbonControlEventArgs e)
+        {
+            DataBase.DataBaseWindow dataBaseWindow = new DataBase.DataBaseWindow();
+        }
     }
 }

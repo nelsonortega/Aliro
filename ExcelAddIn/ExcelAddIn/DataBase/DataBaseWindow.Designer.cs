@@ -98,15 +98,16 @@
             this.btnQuery.TabIndex = 6;
             this.btnQuery.Text = "Add";
             this.btnQuery.UseVisualStyleBackColor = true;
+            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Instan";
+            this.label4.Text = "Instances";
             // 
             // cbInstances
             // 

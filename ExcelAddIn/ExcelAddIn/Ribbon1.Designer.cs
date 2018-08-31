@@ -58,6 +58,7 @@
             // 
             this.btnDataBase.Label = "SQL Query";
             this.btnDataBase.Name = "btnDataBase";
+            this.btnDataBase.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnDataBase_Click);
             // 
             // Ribbon1
             // 
