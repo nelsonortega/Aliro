@@ -48,5 +48,29 @@ namespace ExcelAddIn.DataBase
 
 
         }
+
+        private void AddDataBasesTocbDataBase(String instancesName)
+        {
+
+            this.Show();
+
+            string[] instancias;
+            instancias = Conection.InstalledDataBase(instancesName);
+            foreach (string s in instancias)
+            {
+               
+                    CbDataBaseName.Items.Add(@""+s);
+                
+            }
+            cbInstances.Text = "(local)";
+
+
+
+        }
+
+        private void cbInstances_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AddDataBasesTocbDataBase(CbDataBaseName.Text);
+        }
     }
 }

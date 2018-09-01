@@ -116,6 +116,7 @@
             this.cbInstances.Name = "cbInstances";
             this.cbInstances.Size = new System.Drawing.Size(163, 21);
             this.cbInstances.TabIndex = 7;
+            this.cbInstances.SelectedIndexChanged += new System.EventHandler(this.cbInstances_SelectedIndexChanged);
             // 
             // DataBaseWindow
             // 
