@@ -34,23 +34,29 @@ namespace ExcelAddIn.DataBase
             instancias = Conection.InstalledInstances();
             foreach (string s in instancias)
             {
-                if (s == "MSSQLSERVER")
+               /* if (s == "MSSQLSERVER")
                 {
                     cbInstances.Items.Add("(local)");
                 }
                 else
-                {
+                {*/
                     cbInstances.Items.Add(@"(local)\" + s);
-                }
+               // }
             }
-            cbInstances.Text = "(local)";
+          
 
 
+        }
+
+        private void AddTablesTocbTablesName(string Instances,string Database) {
+            cbTableName.DataSource = Conection.TablesInDataBase(Instances,Database);
+            cbTableName.ValueMember = "table_name";
 
         }
 
         private void AddDataBasesTocbDataBase(String instancesName)
         {
+            MessageBox.Show(instancesName);
 
             this.Show();
 
@@ -59,10 +65,10 @@ namespace ExcelAddIn.DataBase
             foreach (string s in instancias)
             {
                
-                    CbDataBaseName.Items.Add(@""+s);
+                    CbDataBaseName.Items.Add(s);
                 
             }
-            cbInstances.Text = "(local)";
+           
 
 
 
@@ -70,7 +76,15 @@ namespace ExcelAddIn.DataBase
 
         private void cbInstances_SelectedIndexChanged(object sender, EventArgs e)
         {
-            AddDataBasesTocbDataBase(CbDataBaseName.Text);
+
+           
+
+             AddDataBasesTocbDataBase( cbInstances.SelectedItem.ToString());
+        }
+
+        private void CbDataBaseName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AddTablesTocbTablesName(cbInstances.SelectedItem.ToString(), CbDataBaseName.SelectedItem.ToString());
         }
     }
 }

@@ -46,6 +46,7 @@
             this.CbDataBaseName.Name = "CbDataBaseName";
             this.CbDataBaseName.Size = new System.Drawing.Size(163, 21);
             this.CbDataBaseName.TabIndex = 0;
+            this.CbDataBaseName.SelectedIndexChanged += new System.EventHandler(this.CbDataBaseName_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -112,6 +113,8 @@
             // cbInstances
             // 
             this.cbInstances.FormattingEnabled = true;
+            this.cbInstances.Items.AddRange(new object[] {
+            "local"});
             this.cbInstances.Location = new System.Drawing.Point(12, 44);
             this.cbInstances.Name = "cbInstances";
             this.cbInstances.Size = new System.Drawing.Size(163, 21);

@@ -70,7 +70,28 @@ namespace ExcelAddIn.DataBase
             return null;
         }
 
+
+
+        public DataTable TablesInDataBase(string instances, string dataBase)
+        {
+                      
+            SqlDataAdapter adapter = new SqlDataAdapter("select* from information_schema.tables", OpenConection(instances, dataBase));
+            DataTable tables = new DataTable("tables");
+            adapter.Fill(tables);
+            return tables;
+            
+        }
+
+        public SqlConnection OpenConection(string instances, string dataBase) {
+            SqlConnection conexion = new SqlConnection("Data Source=" + instances + "; Initial Catalog=" + dataBase + "; Integrated Security = True");
+            conexion.Open();
+            return conexion;
+        }
+
+
+
     }
+}
 
    
-}
+
